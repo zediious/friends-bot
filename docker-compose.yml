@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  friendbot:
+    build:
+      context: bot/.
+      dockerfile: Dockerfile
+    container_name: friendbot
+    volumes:
+      - ./bot:/bot
+    command: sh -c "cd bot &&
+                    conda run -n discordWork python bot.py"
+
+volumes:
+  friend-bot:
