@@ -5,4 +5,6 @@ dependencies:
   - python=3.10.4
   - pip:
     - discord.py==2.0.1
-    - python-dotenv==0.20.0 
+    - python-dotenv==0.20.0
+    - requests==2.28.1
+    - urllib3==1.26.12
