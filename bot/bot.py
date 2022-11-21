@@ -65,7 +65,7 @@ async def gamenews(interaction: discord.Interaction, game: str, amount: str):
             message_content = REMOVE_TAGS.sub('', message["contents"])
             if len(message_content) > 500:
                 message_content = (message_content[:499] + '..')
-            embed_list.append(discord.Embed(title=message["title"], description=f"{message_content}\n\nPosted on `{datetime.fromtimestamp(message['date']).isoformat('#', 'hours')}`", url=message["url"].replace(' ', '')))
+            embed_list.append(discord.Embed(title=message["title"], description=f"{message_content}\n\nPosted on `{datetime.fromtimestamp(message['date']).isoformat(' : ', 'hours:minutes')}`", url=message["url"].replace(' ', '')))
 
         await interaction.response.send_message(content=f"```Last {amount} news items for:``````{game}```" ,embeds=embed_list)
     else: 
